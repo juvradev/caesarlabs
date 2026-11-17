@@ -1,0 +1,16 @@
+extends: default
+
+ignore: |
+  clusters/*/flux-system/gotk-components.yaml
+  charts/*/templates/
+
+rules:
+  document-start: disable
+  line-length: disable
+  truthy:
+    check-keys: false
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  comments:
+    min-spaces-from-content: 1
