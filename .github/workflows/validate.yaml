@@ -9,7 +9,8 @@ permissions:
   contents: read
 
 env:
-  KUBECONFORM_VERSION: v0.8.0
+  # renovate: datasource=github-releases depName=yannh/kubeconform
+  KUBECONFORM_VERSION: 0.8.0
 
 jobs:
   yamllint:
@@ -28,7 +29,7 @@ jobs:
       - name: Install kubeconform
         run: |
           mkdir -p "$HOME/bin"
-          curl -sSL "https://github.com/yannh/kubeconform/releases/download/${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz" \
+          curl -sSL "https://github.com/yannh/kubeconform/releases/download/v${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz" \
             | tar -xzf - -C "$HOME/bin" kubeconform
           echo "$HOME/bin" >> "$GITHUB_PATH"
       - name: Show tool versions
