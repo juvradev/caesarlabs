@@ -1,0 +1,44 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)",
+    "helpers:pinGitHubActionDigests",
+  ],
+  timezone: "Europe/Berlin",
+  labels: ["dependencies"],
+
+  // flux resources and k8s manifests
+  flux: {
+    managerFilePatterns: ["/(^|/)(clusters|infrastructure|monitoring|apps)/.+\\.ya?ml$/"],
+  },
+  kubernetes: {
+    managerFilePatterns: ["/(^|/)(clusters|infrastructure|monitoring|apps)/.+\\.ya?ml$/"],
+  },
+
+  // activate pre-commit-hook
+  "pre-commit": {
+    enabled: true,
+  },
+
+  // tool-versions in workflows marked with comment
+  customManagers: [
+    {
+      customType: "regex",
+      managerFilePatterns: ["/^\\.github/workflows/.+\\.ya?ml$/"],
+      matchStrings: [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+\\w+: ?[\"']?(?<currentValue>[^\"'\\s]+)[\"']?",
+      ],
+      extractVersionTemplate: "^v?(?<version>.+)$",
+    },
+  ],
+
+  packageRules: [
+    {
+      description: "CI-Tooling: kleine Updates automatisch mergen, sobald alle Checks grün sind",
+      matchManagers: ["github-actions", "pre-commit", "custom.regex"],
+      matchUpdateTypes: ["minor", "patch", "digest"],
+      automerge: true,
+    },
+  ],
+}

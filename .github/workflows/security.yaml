@@ -9,6 +9,7 @@ permissions:
   contents: read
 
 env:
+  # renovate: datasource=github-releases depName=gitleaks/gitleaks
   GITLEAKS_VERSION: 8.30.1
 
 jobs:
