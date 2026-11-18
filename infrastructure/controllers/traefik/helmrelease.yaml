@@ -43,6 +43,10 @@ spec:
               to: websecure
               scheme: https
               permanent: true
+      websecure:
+        http:
+          middlewares:
+            - traefik-security-headers@kubernetescrd
 
     accessLog:
       enabled: true
