@@ -181,6 +181,7 @@ spec:
 | Secret                 | Namespace      | File                                                              | Source / notes                                                                                   | Expires |
 |------------------------|----------------|-------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|---------|
 | `cloudflare-api-token` | `cert-manager` | `infrastructure/configs/cluster-issuers/cloudflare-token.sops.yaml` | Cloudflare user API token `cert-manager-caesarlabs` – **DNS: Edit + Zone: Read**, only zone `caesarlabs.org`. Used for Let's Encrypt DNS-01. | never   |
+| `traefik-dashboard-auth` | `traefik` | `/Users/julius/Documents/files/repositories/caesarlabs/infrastructure/configs/traefik-dashboard/dashboard-auth.sops.yaml` | htpasswd (bcrypt) for user admin, password in password manager | never   |
 
 **Planned**
 
