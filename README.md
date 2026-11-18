@@ -112,7 +112,7 @@ More details: [`docs/secrets.md`](docs/secrets.md)
 - [x] CI pipelines (validate & security)
 - [x] Branch protection & Renovate
 - [x] Let's Encrypt ClusterIssuers (staging & prod)
-- [ ] Traefik & cert-manager
+- [x] Traefik & cert-manager
 - [ ] kube-prometheus-stack
 - [ ] Loki & Alloy
 - [ ] Flux & Alertmanager notifications
