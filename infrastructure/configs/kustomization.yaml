@@ -4,3 +4,4 @@ resources:
   - cluster-issuers
   - wildcard-cert
   - traefik-dashboard
+  - traefik-middlewares
