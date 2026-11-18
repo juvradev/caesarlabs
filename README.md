@@ -87,6 +87,10 @@ pre-commit install
 ./scripts/validate.sh
 ```
 
+```bash
+./scripts/check-helm-values.sh
+```
+
 ---
 
 ## 🔐 Secrets
