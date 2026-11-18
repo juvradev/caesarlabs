@@ -102,7 +102,7 @@ gh pr create --fill
 | `kubeconform`    | validate       | `kustomize build` + schema validation of all manifests    |
 | `gitleaks`       | security       | Secret scan over the full Git history                     |
 | `sops-encrypted` | security       | All `*.sops.yaml` files are really encrypted              |
-
+| `helm-values`    | validate       | Renders every HelmRelease with its values against the chart's schema |
 ```bash
 gh pr checks        # status in the terminal
 gh pr view --web    # open the PR in the browser

@@ -112,7 +112,7 @@ not the tag object). Reference it with the version as a comment – Renovate kee
 | ↳ Required approvals                    | **0** – you cannot approve your own PR; 1 would lock you out        |
 | ↳ Require conversation resolution       | ✅                                                                  |
 | ↳ Allowed merge methods                 | Squash                                                              |
-| Require status checks to pass           | ✅ – `yamllint`, `kubeconform`, `gitleaks`, `sops-encrypted`        |
+| Require status checks to pass           | ✅ – `yamllint`, `kubeconform`, `gitleaks`, `sops-encrypted`, `helm-values`       |
 | ↳ Require branches to be up to date     | ✅                                                                  |
 | Require signed commits                  | ❌ for now (optional later)                                         |
 
